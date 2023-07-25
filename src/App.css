@@ -1,38 +1,29 @@
-.App {
-  text-align: center;
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --pink: #da5889;
+  --dark-pink: #a44266;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--pink);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: url(./assets/clouds.webp) no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white; 
 }
 
-.App-link {
-  color: #61dafb;
+.App-header div {
+  background: linear-gradient(to bottom, transparent, rgba(236,76,138,.5),#ec4c8a, #da5889);
+  padding: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
