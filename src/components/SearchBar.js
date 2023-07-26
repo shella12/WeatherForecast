@@ -36,7 +36,7 @@ const SearchBar = (props) => {
           onSelect={(e) => onChangeHandler(e)}
         />
         <button className="input-submit" type="submit" onClick={(e) => onClickHandler(e)}>
-          <FiSearch style={{ color: '#0290ff', fontSize: '1.6rem' }} />
+          <FiSearch />
         </button>
       </form>
     </div>

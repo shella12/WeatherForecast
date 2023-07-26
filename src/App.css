@@ -19,17 +19,93 @@ body {
   background: url(./assets/clouds.webp) no-repeat;
   background-position: center;
   background-size: cover;
-  color: white; 
+  color: white;
 }
 
 .App-header div {
-  background: linear-gradient(to bottom, transparent, rgba(236,76,138,.5),#ec4c8a, #da5889);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(236, 76, 138, 0.5),
+    #ec4c8a,
+    #da5889
+  );
   padding: 5rem;
 }
 
-.input-submit, .input-text {
-  background-color: transparent;
-  border: none;
-  outline: none;
+.form-container {
+  display: flex;
+  border: 1px solid #f6f1f3;
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+  width: 50%;
+  max-width: 40rem;
+  margin: auto;
 }
 
+.input-submit,
+.input-text {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #f6f1f3;
+}
+
+.input-text {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.input-text::placeholder {
+  color: #f6f1f3;
+}
+
+.input-submit {
+  font-size: 1.6rem;
+}
+
+.pac-container {
+  /* background: url(./assets/clouds.webp) no-repeat; */
+  background-size: cover;
+  background-color: #a4426625;
+  outline: none;
+  border: none;
+  color: #f6f1f3;
+  top: 280px !important;
+  padding: 2rem 1rem;
+  margin: auto;
+}
+
+.pac-container::after {
+  display: none;
+}
+
+.pac-container:active {
+  color: #1d1c1c;
+}
+
+.pac-item {
+padding: 0.6rem 0;
+}
+
+.pac-item-query {
+  font-size: 1rem;
+  color: #f6f1f3;
+}
+
+.pac-item:hover .pac-item-query {
+  color: #1d1c1c;
+}
+
+.pac-item-selected .pac-item-query {
+  color: #1d1c1c;
+}
+
+.pac-item:hover span:nth-child(3) {
+  color: #605555;
+}
+
+.pac-item span:nth-child(3) {
+  font-size: 0.8rem;
+  color: #cbbf87;
+}
