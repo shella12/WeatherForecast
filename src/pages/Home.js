@@ -5,9 +5,16 @@ import SearchBar from "../components/SearchBar";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.weather);
-  const forecast = data.weather.length !== 0 ? data.weather[0].list : null;
-
+  const weather= useSelector((state) => state.weather.weather);
+  const isLoading = useSelector((state) => state.weather.loading);
+  const isError = useSelector((state) => state.weather.error);
+  if (isLoading){
+    <h1>Loading...</h1>
+  }
+  else if(isError) {
+    <h1>{isError}</h1>
+  }
+ 
   const inputLocation = (location) => {
     dispatch(getWeather(location));
   }; 
@@ -15,7 +22,9 @@ const Home = () => {
   return (
     <>
       <SearchBar inputLocation={inputLocation}/>
-      <Lists forecast={forecast}/>
+      {weather?
+      <Lists weather={weather}/>:<p>Nothing to display</p>
+      }
     </>
   );
 };

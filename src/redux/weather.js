@@ -5,9 +5,9 @@ const geoAPI = "http://api.openweathermap.org/geo/1.0/direct?";
 const apiId = "129be1eff3bfdd367c8cd6e187c2071a";
 const GET_WEATHER = "WEATHER_API/weather/GET_WEATHER";
 const initialState = {
-  weather: [],
+  weather: null,
   error: null,
-  loading: null,
+  loading: false,
 };
 
 export const getWeather = createAsyncThunk(GET_WEATHER, async (location) => {
@@ -19,6 +19,7 @@ export const getWeather = createAsyncThunk(GET_WEATHER, async (location) => {
       )
     )
     .then((response) => response.json());
+    console.log(response);
   return response;
 });
 
@@ -32,17 +33,17 @@ const weatherSlice = createSlice({
     builder
       .addCase(getWeather.pending, (state) => ({
         ...state,
-        loading: "Loading ...",
+        loading: true,
       }))
       .addCase(getWeather.fulfilled, (state, action) => ({
         ...state,
-        weather: [action.payload],
-        loading: null,
+        weather: action.payload,
+        loading: false,
       }))
       .addCase(getWeather.rejected, (state, action) => ({
         ...state,
         error: action.error.message,
-        loading: null,
+        loading: false,
       }));
   },
 });

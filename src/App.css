@@ -65,7 +65,7 @@ body {
 }
 
 .pac-container {
-  /* background: url(./assets/clouds.webp) no-repeat; */
+  background: url(./assets/clouds.webp) no-repeat;
   background-size: cover;
   background-color: #a4426625;
   outline: none;
@@ -108,4 +108,61 @@ padding: 0.6rem 0;
 .pac-item span:nth-child(3) {
   font-size: 0.8rem;
   color: #cbbf87;
+}
+
+.weather-icon {
+  width: 3.5rem;
+  aspect-ratio: 1/1;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.today-weather-card {
+  padding: 2rem;
+  gap: 1rem;
+ 
+}
+
+.today-weather-card > div {
+  gap: 1rem;
+  align-items: center;
+}
+
+.city-name {
+  margin: 1rem;
+  color: #dbcece;
+}
+
+.today-card {
+  margin: 3rem;
+  border: 3px solid #9fce1e;
+}
+
+.card-container {
+  padding: 2rem;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #a44266;
+}
+
+ul {
+  list-style: none;
+} 
+
+.day-name {
+  margin-left: 4%;
+  font-size: 1.3rem;
 }

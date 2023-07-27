@@ -16,12 +16,13 @@ const SearchBar = (props) => {
     if (location.trim()) {
       inputLocation(location);
       setlocation('');
-    } else {
-      alert('Please enter input');
     }
   };
-  const onChangeHandler = (event) => {
-    setlocation(event.target.value);
+  const enterKeyHandler = (e) => {
+    if (e.key === "Enter" && location.trim()) {
+      inputLocation(location);
+      setlocation('');
+    }
   };
   return (
     <div>
@@ -32,8 +33,9 @@ const SearchBar = (props) => {
           type="text"
           placeholder="Enter location..."
           value={location}
-          onChange={(e) => onChangeHandler(e)}
-          onSelect={(e) => onChangeHandler(e)}
+          onChange={(e) =>  setlocation(e.target.value)}
+          onSelect={(e) =>  setlocation(e.target.value)}
+          onKeyDown={(e) => enterKeyHandler(e)}
         />
         <button className="input-submit" type="submit" onClick={(e) => onClickHandler(e)}>
           <FiSearch />
