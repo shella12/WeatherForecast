@@ -2,10 +2,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast?id=524901&`;
 const geoAPI = "http://api.openweathermap.org/geo/1.0/direct?";
-const apiId = "129be1eff3bfdd367c8cd6e187c2071a";
+const apiId = process.env.REACT_APP_WEATHER_API_API_KEY;
 const GET_WEATHER = "WEATHER_API/weather/GET_WEATHER";
 const initialState = {
   weather: null,
+  favourites: localStorage.getItem('favouriteCities') ? JSON.parse(localStorage.getItem('favouriteCities')) : [],
   error: null,
   loading: false,
 };
@@ -27,7 +28,14 @@ const weatherSlice = createSlice({
   name: "weather report",
   initialState,
   reducers: {
-    resetState: () => initialState,
+    addFavouriteCities: (state, action) => {
+      return {
+        favourites: [
+          ...state.favourites,
+             action.payload,
+        ],
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -48,5 +56,5 @@ const weatherSlice = createSlice({
   },
 });
 
-export const { resetState } = weatherSlice.actions;
+export const { addFavouriteCities } = weatherSlice.actions;
 export default weatherSlice.reducer;

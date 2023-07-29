@@ -6,7 +6,7 @@ const SearchBar = (props) => {
   const { inputLocation } = props;
   const [location, setlocation] = useState('');
   const { ref } = usePlacesWidget({
-    apiKey: 'AIzaSyAJXEfnHg0GO52LRMGf0Oz3lfQeOrDUR34',
+    apiKey: process.env.REACT_APP_GOOGLE_PLACES_API_KEY,
     options: {
       types: ['(cities)'],
     },

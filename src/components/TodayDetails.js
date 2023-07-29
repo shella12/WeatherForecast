@@ -24,12 +24,12 @@ const TodayDetails = (props) => {
             <div className="flex column">
               <h2>Weather</h2>
               <p>{dateTime[0]}</p>
-              <p>{time >= 12 ?  <span>{time}:00 pm</span>:  <span>{time}:00 am</span>}</p>
+              <p>{time >= 12 ?  <span>{time - 11}:00 pm</span>:  <span>{time + 1}:00 am</span>}</p>
               <p>{today.weather[0].main}</p>
             </div>
           </>
         ) : (
-          <p>{time >= 12 ?  <span>{time}:00 pm</span>:  <span>{time}:00 am</span>}</p>
+          <p>{time >= 12 ?  <span>{time - 11}:00 pm</span>:  <span>{time + 1}:00 am</span>}</p>
         )}
       </div>
     </div>

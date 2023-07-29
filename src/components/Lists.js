@@ -5,32 +5,29 @@ import Today from "./Today";
 const Lists = (props) => {
   //   const navigate = useNavigate();
 
-  const { weather } = props;
+  const { weather, favourites } = props;
   const forecast = weather.length !== 0 ? weather.list : null;
   const city = weather.city.name;
   const today = weather.list[0];
   const groupItems = (array) => {
     return array.reduce((groups, item) => {
-        const name = item["dt_txt"].split(" ")[0]
-        const group = groups[name] || (groups[name] = []);
-        group.push(item);
-        return groups;
+      const name = item["dt_txt"].split(" ")[0];
+      const group = groups[name] || (groups[name] = []);
+      group.push(item);
+      return groups;
     }, []);
-}
-
-const groups = groupItems(forecast);
-console.log(groups['2023-07-27']);
-  
+  };
+  const groups = groupItems(forecast);
   //   const redirectToDetailsPage = (city) => {
   //     navigate("details/" + city.id, { state: city });
   //   };
 
   return (
     <>
-      <Today today={today} city={city}/>
+      <Today today={today} city={city} favourites={favourites}/>
       <ul className="list-container">
         {groups &&
-          Object.values(groups).map((day, index) => (
+          Object.values(groups).map((day) => (
             <List
               key={day["dt"]}
               day={day}

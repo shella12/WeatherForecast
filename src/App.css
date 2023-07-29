@@ -85,7 +85,7 @@ body {
 }
 
 .pac-item {
-padding: 0.6rem 0;
+  padding: 0.6rem 0;
 }
 
 .pac-item-query {
@@ -130,7 +130,6 @@ padding: 0.6rem 0;
 .today-weather-card {
   padding: 2rem;
   gap: 1rem;
- 
 }
 
 .today-weather-card > div {
@@ -160,9 +159,114 @@ padding: 0.6rem 0;
 
 ul {
   list-style: none;
-} 
+}
 
 .day-name {
   margin-left: 4%;
   font-size: 1.3rem;
+}
+
+.form {
+  background-color: #9531525e;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+  margin: 0 15%;
+  padding: 5rem;
+  gap: 10%;
+  width: fit-content;
+  box-shadow: 8px 8px 5px -4px rgba(12, 12, 12, 0.4);
+}
+
+.form img {
+  width: 30%;
+  aspect-ratio: 1/1;
+  border: 1px solid #57454c;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.form > div {
+  justify-content: center;
+  text-align: center;
+}
+
+.form-title {
+  color: #f6f1f3;
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.form-para {
+  font-family: cursive, sans-serif;
+  margin: 4rem 1rem 1rem;
+  color: #f6f1f3;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 1rem;
+}
+
+.auth-form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #50484b64;
+  padding: 0.4rem;
+}
+
+.auth-form input::placeholder {
+  color: #dbcece;
+  font-size: 0.8rem;
+}
+
+.auth-form button {
+  background-color: #a44266;
+  outline: none;
+  border: none;
+  border-radius: 4rem;
+  color: #dbcece;
+  padding: 0.7rem 3rem;
+  width: fit-content;
+  align-self: center;
+  box-shadow: inset -5px -6px 3px -4px rgba(12, 12, 12, 0.4);
+}
+
+.from-link {
+  margin: 2rem 0;
+  color: #b8b0b0;
+}
+
+.from-link a {
+  color: #f3b257;
+}
+
+.or-para {
+  transform: translate(0, 8px);
+  background-color: #b35274e3;
+  padding: 0 1rem;
+  color: #b8b0b0;
+  width: fit-content;
+  align-self: center;
+}
+
+.hr {
+  margin-bottom: 1.5rem;
+  border: 1px solid #57454c;
+  border-bottom: none;
+}
+
+.g-btn {
+  background-color: #a44242 !important;
+  align-self: center;
+}
+
+.g-btn > div > svg {
+  background-color: #8b3232 !important;
+}
+
+.heart-icon {
+  font-size: 2rem;
 }
