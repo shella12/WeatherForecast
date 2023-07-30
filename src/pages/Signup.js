@@ -28,7 +28,7 @@ e.preventDefault();
         <h2 className="form-title"> Sign up</h2>
         <p className="form-para">Don't let the weather catch you off guard. Save your favorite cities and always know their weather.</p>
      
-        {alert && <p>{alert}</p>}
+        {alert && <p className="alert">{alert}</p>}
         <form onSubmit={(e) => handleSubmit(e)} className="auth-form">
           <input
             type="email"

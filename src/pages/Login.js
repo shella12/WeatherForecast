@@ -40,7 +40,7 @@ const Login = () => {
             Don't let the weather catch you off guard. Save your favorite cities
             and always know their weather.
           </p>
-          {error && <p>{error}</p>}
+          {error && <p className="alert">{error}</p>}
           <form onSubmit={(e) => handleSubmit(e)} className="auth-form">
             <input
               type="email"

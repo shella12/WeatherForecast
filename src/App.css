@@ -12,6 +12,8 @@
   --yellow: #f89f58;
   --light-blue: #1aa7ec;
   --off-white: #f6f1f3;
+  --brown: #8b3232;
+  --red: #a44242;
 }
 
 body {
@@ -237,6 +239,15 @@ ul {
   color: var(--off-white);
 }
 
+.alert {
+  color: #9fce1e;
+  background-color: #9fce1e5e;
+  border: 1px solid #9fce1e;
+  padding: 0.8rem;
+  width: fit-content;
+  margin: auto;
+}
+
 .form {
   background-color: #9531525e;
   background-repeat: no-repeat;
@@ -269,6 +280,7 @@ ul {
 
 .form-para {
   font-family: cursive, sans-serif;
+  font-size: 1.1rem;
   margin: 4rem 1rem 1rem;
   color: var(--off-white);
 }
@@ -282,6 +294,8 @@ ul {
 
 .auth-form input {
   background: transparent;
+  color: #dbcece;
+  font-size: 1.1rem;
   border: none;
   outline: none;
   border-bottom: 1px solid #50484b64;
@@ -289,8 +303,8 @@ ul {
 }
 
 .auth-form input::placeholder {
-  color: #dbcece;
-  font-size: 0.8rem;
+  color: var(--yellow);
+  font-size: 1rem;
 }
 
 .auth-form button,
@@ -309,7 +323,7 @@ ul {
 
 .auth-form button:hover,
 .today-card-div button:hover {
-  background-color: #8b3232;
+  background-color: var(--brown);
   transform: scale(1);
 }
 
@@ -344,12 +358,12 @@ ul {
 }
 
 .g-btn {
-  background-color: #a44242 !important;
+  background-color: var(--red) !important;
   align-self: center;
 }
 
 .g-btn > div > svg {
-  background-color: #8b3232 !important;
+  background-color: var(--brown) !important;
 }
 
 .heart-icon {
