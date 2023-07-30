@@ -145,6 +145,7 @@ body {
 .today-card {
   margin: 3rem;
   border: 3px solid #9fce1e;
+  padding: 2rem;
 }
 
 .card-container {
@@ -222,7 +223,7 @@ ul {
   font-size: 0.8rem;
 }
 
-.auth-form button {
+.auth-form button, .today-card-div button {
   background-color: #a44266;
   outline: none;
   border: none;
@@ -231,7 +232,18 @@ ul {
   padding: 0.7rem 3rem;
   width: fit-content;
   align-self: center;
+  transform: scale(0.95);
   box-shadow: inset -5px -6px 3px -4px rgba(12, 12, 12, 0.4);
+}
+
+.auth-form button:hover, .today-card-div button:hover {
+  background-color: #8b3232;
+  transform: scale(1);
+}
+
+.auth-form button:active, .today-card-div button:active {
+  background-color: #9e2c2c93;
+  transform: scale(0.9);
 }
 
 .from-link {
@@ -269,5 +281,16 @@ ul {
 
 .heart-icon {
   font-size: 2rem;
-  color: red;
+  color: #f3b257;
+}
+
+.today-card-div {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.detail-list-container {
+ display: flex;
+ flex-direction: column;
+ padding: 3rem;
 }

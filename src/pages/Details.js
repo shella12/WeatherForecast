@@ -10,7 +10,7 @@ const Details = () => {
     };
   
 return(
-<ul className="list-container">
+<ul className="detail-list-container">
         {state &&
           Object.values(state).map((day) => (
             <List

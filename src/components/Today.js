@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodayDetails from "./TodayDetails";
 import { AiOutlineHeart } from 'react-icons/ai';
 import { AiTwotoneHeart } from 'react-icons/ai';
@@ -8,29 +8,36 @@ import { useDispatch } from "react-redux";
 const Today = (props) => {
     const { today, city, favourites, redirectToDetailsPage, groups} = props;
     const dispatch = useDispatch();
-    const favCity =  favourites.filter(item => item === city );
-    const [isFavourite, setIsFavourite] = useState(favCity[0]? favCity[0]: null);
+    const [isFavourite, setIsFavourite] = useState(favourites.includes(city));
     const user = localStorage.getItem('User') ? JSON.parse(localStorage.getItem('User')) : '';
+
+    useEffect(() => {
+      setIsFavourite(favourites.includes(city));
+    }, [city]);
+
     const addFav = () => {
         if (!isFavourite){
             dispatch(addFavouriteCities(city))
-            setIsFavourite(city)
+            setIsFavourite(true)
            }
            else {
             dispatch(removeFavouriteCities(city))
-            setIsFavourite(null)
+            setIsFavourite(false)
            }
     }
     return (
-        <div className="today-card" onClick={() => redirectToDetailsPage(groups)}>
+      <div className="today-card">
         <h1 className="city-name">{city}</h1>
+        <div className="flex today-card-div">
         <TodayDetails today={today} showDetails={true}/>
+        <button type="button" onClick={() => redirectToDetailsPage(groups)}>See More</button>
         {user && (
         <div>
           {!isFavourite ?  <AiOutlineHeart className="heart-icon" onClick={addFav}/> : <AiTwotoneHeart className="heart-icon" onClick={addFav}/>}
         </div>
       )}
         </div>
+      </div>
     );
   };
   
