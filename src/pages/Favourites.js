@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getWeather } from "../redux/weather";
+import { getWeather, removeFavouriteCities } from "../redux/weather";
 import { useNavigate } from "react-router-dom";
-import Header from '../components/Header'
+import { AiTwotoneHeart } from "react-icons/ai";
+import Header from "../components/Header";
 
 const Favorite = () => {
   const favourites = useSelector((state) => state.weather.favourites);
@@ -13,17 +14,29 @@ const Favorite = () => {
     navigate("FavList/" + location, { state: location });
   };
 
-
+  const removeFav = (city) => {
+    dispatch(removeFavouriteCities(city));
+  };
   return (
-   <>
-   <Header />
-    <ul className="fav-list-container">
-      {favourites &&
-        favourites.map((cityName) => (
-          <button onClick={() => inputLocation(cityName)}>{cityName}</button>
-        ))}
-    </ul>
-   </>
+    <>
+      <Header />
+      <ul className="fav-list-container">
+        {favourites &&
+          favourites.map((cityName) => (
+            <>
+            <div>
+            <button onClick={() => inputLocation(cityName)}>
+              {cityName}{" "}
+            </button>
+              <AiTwotoneHeart
+                className="heart-icon"
+                onClick={() => removeFav(cityName)}
+              />
+            </div>
+            </>
+          ))}
+      </ul>
+    </>
   );
 };
 export default Favorite;

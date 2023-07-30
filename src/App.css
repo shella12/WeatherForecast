@@ -377,14 +377,33 @@ ul {
   margin: 5% 15%;
 }
 
-.fav-list-container button{
+.fav-list-container div{
+ display: flex;
+ gap: 2rem;
+ align-items: center;
+}
+
+.fav-list-container div button{
  padding: 2rem;
  outline: none;
  border: none;
  background-color: var(--dark-pink);
  color: var(--off-white);
+ flex: 1;
 }
 
-.fav-list-container button:nth-child(2n) {
+.fav-list-container div:nth-child(2n) button{
   background-color: #de3b7a;
+}
+
+.back-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 2rem;
+  align-self: flex-start;
+}
+
+.fav-detail {
+  margin: 5%;
 }
