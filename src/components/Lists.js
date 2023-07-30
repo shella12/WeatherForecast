@@ -1,10 +1,8 @@
-// import { useNavigate } from "react-router-dom";
-import List from "./list";
+import { useNavigate } from "react-router-dom";
 import Today from "./Today";
 
 const Lists = (props) => {
-  //   const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const { weather, favourites } = props;
   const forecast = weather.length !== 0 ? weather.list : null;
   const city = weather.city.name;
@@ -18,23 +16,13 @@ const Lists = (props) => {
     }, []);
   };
   const groups = groupItems(forecast);
-  //   const redirectToDetailsPage = (city) => {
-  //     navigate("details/" + city.id, { state: city });
-  //   };
+  const redirectToDetailsPage = (groups) => {
+    navigate("details/" + groups.city, { state: groups });
+  };
 
   return (
     <>
-      <Today today={today} city={city} favourites={favourites}/>
-      <ul className="list-container">
-        {groups &&
-          Object.values(groups).map((day) => (
-            <List
-              key={day["dt"]}
-              day={day}
-              // redirectToDetailsPage={redirectToDetailsPage}
-            />
-          ))}
-      </ul>
+      <Today today={today} city={city} favourites={favourites} redirectToDetailsPage={redirectToDetailsPage} groups={groups}/>
     </>
   );
 };

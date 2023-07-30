@@ -9,9 +9,7 @@ const Signup = () => {
   const [alert, setAlert] = useState("");
   const { signUp} = useUserAuth();
   const navigate = useNavigate();
-  const {user} = useUserAuth();
-  console.log("user", user);
-    const handleSubmit = async(e) => {
+  const handleSubmit = async(e) => {
 e.preventDefault();
       try {
        await signUp(email,password)

@@ -7,16 +7,16 @@ import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const {user, logOut} = useUserAuth();
-  console.log("user", user);
   const dispatch = useDispatch();
   const weather= useSelector((state) => state.weather.weather);
   const favourites= useSelector((state) => state.weather.favourites);
   const isLoading = useSelector((state) => state.weather.loading);
   const isError = useSelector((state) => state.weather.error);
+  
   if (isLoading){
     <h1>Loading...</h1>
   }
-  else if(isError) {
+  if(isError) {
     <h1>{isError}</h1>
   }
  

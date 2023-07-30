@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 const ProtectedRoute = ({children}) => {
 // const { user } = useUserAuth();
 const user = localStorage.getItem('User') ? JSON.parse(localStorage.getItem('User')) : '';
-console.log("user", user);
 if (!user) {
     return <Navigate to="/Login"/>
 }

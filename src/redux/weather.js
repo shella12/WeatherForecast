@@ -12,7 +12,7 @@ const initialState = {
 };
 
 export const getWeather = createAsyncThunk(GET_WEATHER, async (location) => {
-  const response = await fetch(`${geoAPI}q=${location}&limit=5&appid=${apiId}`)
+  const response = await fetch(`${geoAPI}q=${location}&limit=1&appid=${apiId}`)
     .then((response) => response.json())
     .then((response) =>
       fetch(
@@ -20,7 +20,6 @@ export const getWeather = createAsyncThunk(GET_WEATHER, async (location) => {
       )
     )
     .then((response) => response.json());
-    console.log(response);
   return response;
 });
 
@@ -29,12 +28,24 @@ const weatherSlice = createSlice({
   initialState,
   reducers: {
     addFavouriteCities: (state, action) => {
-      return {
+      const newState = {
+        ...state,
         favourites: [
           ...state.favourites,
              action.payload,
         ],
-      };
+      }
+      localStorage.setItem('favouriteCities', JSON.stringify(newState.favourites));
+      return newState;
+    },
+    removeFavouriteCities: (state, action) => {
+      const newFav = state.favourites.filter((city) => city !== action.payload);
+      const newState = {
+        ...state,
+        favourites: newFav,
+      }
+      localStorage.setItem('favouriteCities', JSON.stringify(newState.favourites));
+      return newState
     },
   },
   extraReducers: (builder) => {
@@ -56,5 +67,5 @@ const weatherSlice = createSlice({
   },
 });
 
-export const { addFavouriteCities } = weatherSlice.actions;
+export const { addFavouriteCities, removeFavouriteCities } = weatherSlice.actions;
 export default weatherSlice.reducer;
