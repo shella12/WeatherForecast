@@ -10,7 +10,6 @@
   --pink: #da5889;
   --dark-pink: #a44266;
   --yellow: #f89f58;
-  --dark-blue: #165baa;
   --light-blue: #1aa7ec;
   --off-white: #f6f1f3;
 }
@@ -83,8 +82,8 @@ nav {
 }
 
 .empty-text {
- text-align: center;
- margin-top: 10%;
+  text-align: center;
+  margin-top: 10%;
   color: #e0d9d99a;
 }
 
@@ -243,7 +242,7 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   align-items: center;
-  margin: 0 15%;
+  margin: 5% 15%;
   padding: 5rem;
   gap: 10%;
   width: fit-content;
@@ -377,22 +376,22 @@ ul {
   margin: 5% 15%;
 }
 
-.fav-list-container div{
- display: flex;
- gap: 2rem;
- align-items: center;
+.fav-list-container div {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
-.fav-list-container div button{
- padding: 2rem;
- outline: none;
- border: none;
- background-color: var(--dark-pink);
- color: var(--off-white);
- flex: 1;
+.fav-list-container div button {
+  padding: 2rem;
+  outline: none;
+  border: none;
+  background-color: var(--dark-pink);
+  color: var(--off-white);
+  flex: 1;
 }
 
-.fav-list-container div:nth-child(2n) button{
+.fav-list-container div:nth-child(2n) button {
   background-color: #de3b7a;
 }
 
@@ -406,4 +405,26 @@ ul {
 
 .fav-detail {
   margin: 5%;
+}
+
+.loader {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  right: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid pink;
+  border-color: pink transparent pink transparent;
+  animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

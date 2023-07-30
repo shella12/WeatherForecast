@@ -7,6 +7,7 @@ const Lists = (props) => {
   const forecast = weather.length !== 0 ? weather.list : null;
   const city = weather.city.name;
   const today = weather.list[0];
+  
   const groupItems = (array) => {
     return array.reduce((groups, item) => {
       const name = item["dt_txt"].split(" ")[0];

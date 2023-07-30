@@ -6,6 +6,7 @@ import Header from "../components/Header";
 
 const Favorite = () => {
   const favourites = useSelector((state) => state.weather.favourites);
+  console.log(favourites.length);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,7 +22,7 @@ const Favorite = () => {
     <>
       <Header />
       <ul className="fav-list-container">
-        {favourites &&
+        {favourites.length !== 0?
           favourites.map((cityName) => (
             <>
             <div>
@@ -34,7 +35,7 @@ const Favorite = () => {
               />
             </div>
             </>
-          ))}
+          )):<p className="empty-text">No favourites added</p>}
       </ul>
     </>
   );

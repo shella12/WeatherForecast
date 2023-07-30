@@ -7,7 +7,12 @@ import Header from "../components/Header";
 const Home = () => {
   const dispatch = useDispatch();
   const weather= useSelector((state) => state.weather.weather);
+  const isLoading = useSelector((state) => state.weather.loading);
   const favourites= useSelector((state) => state.weather.favourites);
+  
+  if(isLoading){
+    return <div class="loader"></div>
+  }
 
   const inputLocation = (location) => {
     dispatch(getWeather(location));
