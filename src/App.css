@@ -9,6 +9,10 @@
 :root {
   --pink: #da5889;
   --dark-pink: #a44266;
+  --yellow: #f89f58;
+  --dark-blue: #165baa;
+  --light-blue: #1aa7ec;
+  --off-white: #f6f1f3;
 }
 
 body {
@@ -22,7 +26,13 @@ body {
   color: white;
 }
 
-.App-header div {
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 5rem;
+}
+
+.header-gradient {
   background: linear-gradient(
     to bottom,
     transparent,
@@ -30,12 +40,57 @@ body {
     #ec4c8a,
     #da5889
   );
-  padding: 5rem;
+  padding: 4rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.auth-btn {
+  background: transparent;
+  border: 1px solid var(--off-white);
+  outline: none;
+  color: var(--off-white);
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
+.line-under {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.auth-btn:hover {
+  background: var(--off-white);
+  color: var(--dark-pink);
+}
+
+.line-under:hover {
+  background: transparent;
+  color: var(--off-white);
+  border-bottom: 1px solid var(--off-white);
+}
+
+.fav-heart {
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.empty-text {
+ text-align: center;
+ margin-top: 10%;
+  color: #e0d9d99a;
 }
 
 .form-container {
   display: flex;
-  border: 1px solid #f6f1f3;
+  border: 1px solid var(--off-white);
   border-radius: 5rem;
   padding: 1rem 2rem;
   width: 50%;
@@ -48,7 +103,7 @@ body {
   background-color: transparent;
   outline: none;
   border: none;
-  color: #f6f1f3;
+  color: var(--off-white);
 }
 
 .input-text {
@@ -57,7 +112,7 @@ body {
 }
 
 .input-text::placeholder {
-  color: #f6f1f3;
+  color: var(--off-white);
 }
 
 .input-submit {
@@ -70,7 +125,7 @@ body {
   background-color: #a4426625;
   outline: none;
   border: none;
-  color: #f6f1f3;
+  color: var(--off-white);
   top: 280px !important;
   padding: 2rem 1rem;
   margin: auto;
@@ -90,7 +145,7 @@ body {
 
 .pac-item-query {
   font-size: 1rem;
-  color: #f6f1f3;
+  color: var(--off-white);
 }
 
 .pac-item:hover .pac-item-query {
@@ -135,6 +190,20 @@ body {
 .today-weather-card > div {
   gap: 1rem;
   align-items: center;
+  color: var(--off-white);
+}
+
+.weather-first-div {
+  border-right: 1px solid var(--yellow);
+  padding: 0 2rem;
+}
+
+.temp-txt {
+  color: var(--off-white);
+}
+
+.time-para {
+  color: var(--light-blue);
 }
 
 .city-name {
@@ -143,7 +212,8 @@ body {
 }
 
 .today-card {
-  margin: 3rem;
+  margin: 3rem auto;
+  width: fit-content;
   border: 3px solid #9fce1e;
   padding: 2rem;
 }
@@ -165,6 +235,7 @@ ul {
 .day-name {
   margin-left: 4%;
   font-size: 1.3rem;
+  color: var(--off-white);
 }
 
 .form {
@@ -193,14 +264,14 @@ ul {
 }
 
 .form-title {
-  color: #f6f1f3;
+  color: var(--off-white);
   font-family: "Lucida Sans", sans-serif;
 }
 
 .form-para {
   font-family: cursive, sans-serif;
   margin: 4rem 1rem 1rem;
-  color: #f6f1f3;
+  color: var(--off-white);
 }
 
 .auth-form {
@@ -223,7 +294,8 @@ ul {
   font-size: 0.8rem;
 }
 
-.auth-form button, .today-card-div button {
+.auth-form button,
+.today-card-div button {
   background-color: #a44266;
   outline: none;
   border: none;
@@ -236,12 +308,14 @@ ul {
   box-shadow: inset -5px -6px 3px -4px rgba(12, 12, 12, 0.4);
 }
 
-.auth-form button:hover, .today-card-div button:hover {
+.auth-form button:hover,
+.today-card-div button:hover {
   background-color: #8b3232;
   transform: scale(1);
 }
 
-.auth-form button:active, .today-card-div button:active {
+.auth-form button:active,
+.today-card-div button:active {
   background-color: #9e2c2c93;
   transform: scale(0.9);
 }
@@ -287,10 +361,30 @@ ul {
 .today-card-div {
   align-items: center;
   justify-content: space-around;
+  gap: 3rem;
 }
 
 .detail-list-container {
- display: flex;
- flex-direction: column;
- padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.fav-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 5% 15%;
+}
+
+.fav-list-container button{
+ padding: 2rem;
+ outline: none;
+ border: none;
+ background-color: var(--dark-pink);
+ color: var(--off-white);
+}
+
+.fav-list-container button:nth-child(2n) {
+  background-color: #de3b7a;
 }

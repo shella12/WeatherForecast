@@ -12,10 +12,10 @@ const TodayDetails = (props) => {
           clouds={today["clouds"]["all"]}
           temp={today["main"]["temp"] - 273.15}
         />
-        <h2>{(today["main"]["temp"] - 273.15).toFixed(2)} °C</h2>
+        <h2 className="temp-txt">{(today["main"]["temp"] - 273.15).toFixed(2)} °C</h2>
         {(showDetails)? (
           <>
-            <div className="flex column">
+            <div className="weather-first-div flex column">
               <p>Precipitation: {today["clouds"]["all"]}%</p>
               <p>Humidity: {today["main"]["humidity"]}%</p>
               <p>Pressure: {today["main"]["pressure"]} hPa</p>
@@ -29,7 +29,7 @@ const TodayDetails = (props) => {
             </div>
           </>
         ) : (
-          <p>{time >= 12 ?  <span>{time - 11}:00 pm</span>:  <span>{time + 1}:00 am</span>}</p>
+          <p className="time-para">{time >= 12 ?  <span>{time - 11}:00 pm</span>:  <span>{time + 1}:00 am</span>}</p>
         )}
       </div>
     </div>
