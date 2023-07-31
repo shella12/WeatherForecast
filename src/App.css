@@ -442,3 +442,17 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+.currentlocation {
+  margin-top: 1.5rem;
+  align-self: flex-end;
+  color: (var(--yellow));
+}
+
+
+.pin {
+  margin-left: auto;
+  font-size: 1.8rem;
+  margin-left: 0.5rem;
+  color: (var(--yellow));
+}

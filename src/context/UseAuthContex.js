@@ -13,6 +13,7 @@ const userAuthContext = createContext();
 
 const UserAuthContextProvider = ({ children }) => {
   const [user, setUser] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const signUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -32,17 +33,16 @@ const UserAuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      localStorage.setItem('User', JSON.stringify(currentUser));
       setUser(currentUser);
+      setLoading(false);
+
     });
-    return () => {
-      unsubscribe();
-    };
+    return unsubscribe
   }, []);
 
   return (
     <userAuthContext.Provider value={{ user, signUp, logIn, logOut, googleSignIn }}>
-      {children}
+      {!loading && children}
     </userAuthContext.Provider>
   );
 };

@@ -1,14 +1,9 @@
 
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import List from "../components/list";
 import Header from "../components/Header";
 const Details = () => {
     const { state } = useLocation();
-    const navigate = useNavigate();
-  
-    const redirectToHome = () => {
-      navigate("/");
-    };
   
 return(
 <>

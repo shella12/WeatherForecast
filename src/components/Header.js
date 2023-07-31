@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useUserAuth } from "../context/UseAuthContex";
 import { AiTwotoneHeart } from "react-icons/ai";
+import CurrentLocation from "./CurrentLocation";
 
 const Header = () => {
   const { user, logOut } = useUserAuth();
@@ -12,7 +13,10 @@ const Header = () => {
     <header className="App-header">
    
         <div className="header-content">
+          <div className="flex column">
         <h1>Weather App</h1>
+        <CurrentLocation />
+          </div>
         {!user ? (
           <nav>
             <NavLink to="/Login" className="auth-btn line-under">
