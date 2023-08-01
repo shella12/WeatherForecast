@@ -4,12 +4,13 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { AiTwotoneHeart } from 'react-icons/ai';
 import { addFavouriteCities, removeFavouriteCities } from '../redux/weather';
 import { useDispatch } from "react-redux";
+import { useUserAuth } from "../context/UseAuthContex";
 
 const Today = (props) => {
     const { today, city, favourites, redirectToDetailsPage, groups} = props;
     const dispatch = useDispatch();
     const [isFavourite, setIsFavourite] = useState(favourites.includes(city));
-    const user = localStorage.getItem('User') ? JSON.parse(localStorage.getItem('User')) : '';
+    const { user } = useUserAuth();
 
     useEffect(() => {
       setIsFavourite(favourites.includes(city));
