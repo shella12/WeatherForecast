@@ -11,7 +11,7 @@ const Home = () => {
   const favourites= useSelector((state) => state.weather.favourites);
   
   if(isLoading){
-    return <div class="loader"></div>
+    return <div className="loader"></div>
   }
 
   const inputLocation = (location) => {

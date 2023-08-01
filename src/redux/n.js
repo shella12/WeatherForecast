@@ -1,5 +1,3 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
 const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?id=524901&`;
 const geoAPI = "https://maps.googleapis.com/maps/api/geocode/json?";
 const apiId = process.env.REACT_APP_WEATHER_API_API_KEY;
@@ -12,7 +10,7 @@ const initialState = {
 };
 
 export const getWeather = createAsyncThunk(GET_WEATHER, async (location) => {
-  const response = await fetch(`${geoAPI}address=${location}&key=${process.env.REACT_APP_GOOGLE_PLACES_API_KEY}`)
+  const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=AIzaSyAJXEfnHg0GO52LRMGf0Oz3lfQeOrDUR34`)
     .then((response) => response.json())
     .then((response) =>
       fetch(
