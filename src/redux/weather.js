@@ -20,7 +20,6 @@ export const getWeather = createAsyncThunk(GET_WEATHER, async (location) => {
       )
     )
     .then((response) => response.json());
-    console.log(response,"response here")
   return response;
 });
 
