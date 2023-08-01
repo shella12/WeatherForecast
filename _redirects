@@ -1,2 +1,0 @@
-/api/* http://api.openweathermap.org/data/2.5/forecast?id=524901 200
-/api/* https://api.openweathermap.org/geo/1.0/direct? 200
