@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const weatherAPI = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?id=524901&`;
-const geoAPI = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/geo/1.0/direct?";
+const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast?id=524901&`;
+const geoAPI = "http://api.openweathermap.org/geo/1.0/direct?";
 const apiId = process.env.REACT_APP_WEATHER_API_API_KEY;
 const GET_WEATHER = "WEATHER_API/weather/GET_WEATHER";
 const initialState = {
