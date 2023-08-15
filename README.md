@@ -17,7 +17,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 AWeather App
+# 📖 Weather App
  <a name="about-project"></a>
 
 > This is a weather forecast website built using openWeatherMap API, Firebase and Google places API.
